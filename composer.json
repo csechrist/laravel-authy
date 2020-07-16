@@ -1,0 +1,54 @@
+{
+    "name": "csechrist/laravel-authy",
+    "description": "A package to quickly add two factor authentication to your application",
+    "keywords": [
+        "csechrist",
+        "laravel-authy"
+    ],
+    "homepage": "https://github.com/csechrist/laravel-authy",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Cameron Sechrist",
+            "email": "cam@camsechrist.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Csechrist\\LaravelAuthy\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Csechrist\\LaravelAuthy\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Csechrist\\LaravelAuthy\\LaravelAuthyServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAuthy": "Csechrist\\LaravelAuthy\\LaravelAuthyFacade"
+            }
+        }
+    }
+}
